@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import ReadyPage from './pages/ReadyPage';
 import HugPage from './pages/HugPage';
 import KissPage from './pages/KissPage';
 import RosePage from './pages/RosePage';
@@ -17,7 +17,7 @@ function App() {
         <Router>
             <MusicPlayer />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<ReadyPage />} />
                 <Route path="/hug" element={<HugPage />} />
                 <Route path="/kiss" element={<KissPage />} />
                 <Route path="/rose" element={<RosePage />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Button = ({ children, onClick, variant = 'primary', className = '' }) => {
+const Button = ({ children, onClick, variant = 'primary', className = '', ...props }) => {
     const baseClasses = "px-8 py-3 rounded-full font-sour-gummy text-xl transition-all shadow-md min-w-[120px]";
 
     const variants = {
@@ -15,6 +15,7 @@ const Button = ({ children, onClick, variant = 'primary', className = '' }) => {
             whileTap={{ scale: 0.95 }}
             onClick={onClick}
             className={`${baseClasses} ${variants[variant]} ${className}`}
+            {...props}
         >
             {children}
         </motion.button>

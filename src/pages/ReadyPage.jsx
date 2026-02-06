@@ -2,19 +2,28 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
+import Button from '../components/Button';
+import Polaroid from '../components/Polaroid';
+import TenorGif from '../components/TenorGif';
+import { TypewriterHeading } from '../components/TypewriterText';
+
+import valentine2 from '../assets/valentine2.jpg';
 
 const ReadyPage = () => {
     const navigate = useNavigate();
     const [noCount, setNoCount] = useState(0);
     const [yesScale, setYesScale] = useState(1);
+    const [showNoGif, setShowNoGif] = useState(false);
+
 
     const handleNoClick = () => {
         setNoCount(noCount + 1);
         setYesScale(yesScale + 0.2);
+        setShowNoGif(true);
     };
 
     const handleYesClick = () => {
-        navigate('/home');
+        navigate('/rose');
     };
 
     const getNoButtonText = () => {
@@ -41,37 +50,49 @@ const ReadyPage = () => {
 
     return (
         <Layout>
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center p-4">
-                <motion.h1
-                    className="text-4xl md:text-6xl text-brand-brown font-sour-gummy mb-12"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    Are you ready for 7 days of love?
-                </motion.h1>
+            {/* Left Side - Polaroid */}
 
-                <div className="flex flex-wrap items-center justify-center gap-8">
-                    <motion.button
+            <div className="flex items-center justify-center order-1 md:order-none">
+                <Polaroid
+                    frontComponent={
+                        <TenorGif
+                            key={noCount > 0 ? "sad-bear" : "happy-bear"}
+                            postId={noCount > 0 ? "12782870542608816906" : "2972827856134174678"}
+                            aspectRatio="1"
+                            className="w-full h-full"
+                        />
+                    }
+                    backImage={valentine2}
+                    caption="Ready?"
+                />
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="flex flex-col items-center md:items-start gap-8 order-2 md:order-none w-full">
+                <TypewriterHeading
+                    heading="Are you ready for 7 days of love?"
+                    className="text-4xl md:text-5xl text-brand-brown text-center md:text-left leading-tight"
+                />
+
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 w-full">
+                    <Button
                         onClick={handleYesClick}
                         style={{ scale: yesScale }}
-                        className="bg-brand-brown text-white px-8 py-4 rounded-full text-xl font-bold shadow-lg hover:bg-opacity-90 transition-colors z-10"
+                        variant='primary'
                         whileHover={{ scale: yesScale * 1.05 }}
                         whileTap={{ scale: yesScale * 0.95 }}
                     >
                         Yes
-                    </motion.button>
+                    </Button>
 
-                    <motion.button
+                    <Button
                         onClick={handleNoClick}
-                        className="bg-gray-200 text-gray-700 px-8 py-4 rounded-full text-xl font-bold hover:bg-gray-300 transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        variant='secondary'
                         initial={{ x: 0 }}
                         animate={noCount > 0 ? { x: [0, -10, 10, -10, 10, 0] } : {}}
                     >
                         {getNoButtonText()}
-                    </motion.button>
+                    </Button>
                 </div>
             </div>
         </Layout>

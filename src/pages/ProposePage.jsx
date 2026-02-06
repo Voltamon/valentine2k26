@@ -58,7 +58,7 @@ const ProposePage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="The big question..." text="Will you be my Valentine?" />
+                <TypewriterText heading="The big question..." text="Can I be yours forever?" />
                 <div className="order-4 md:order-none md:col-start-2 md:self-start w-full">
                     <div className="flex flex-col md:flex-row gap-4 mt-8 items-center md:justify-start w-full">
                         <Button onClick={handleYesClick} variant="primary">
