@@ -27,7 +27,7 @@ export const TypewriterHeading = ({ heading, onComplete, className = "" }) => {
     }, [heading, onComplete]);
 
     return (
-        <h2 className={`font-sour-gummy text-9xl md:text-5xl leading-tight text-brand-brown min-h-[3.5rem] ${className}`}>
+        <h2 className={`font-sour-gummy text-2xl md:text-5xl leading-tight text-brand-brown min-h-[3.5rem] ${className}`}>
             {displayedHeading}
             <motion.span
                 animate={{ opacity: [0, 1, 0] }}
@@ -46,7 +46,7 @@ export const FadeText = ({ show, children, className = "" }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: show ? 1 : 0, y: show ? 0 : 10 }}
             transition={{ duration: 1 }}
-            className={`font-sour-gummy text-3xl text-brand-text opacity-80 ${className}`}
+            className={`font-sour-gummy text-xl md:text-3xl text-brand-text opacity-80 ${className}`}
         >
             {children}
         </motion.div>
