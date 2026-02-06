@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Polaroid = ({ frontImage, backImage, caption }) => {
+import ScratchReveal from './ScratchReveal';
+
+const Polaroid = ({ frontImage, backImage, caption, frontComponent }) => {
     const [isFlipped, setIsFlipped] = React.useState(false);
 
     return (
@@ -23,12 +25,19 @@ const Polaroid = ({ frontImage, backImage, caption }) => {
                     className="backface-hidden bg-brand-brown p-4 pb-12 shadow-xl border border-brand-brown absolute inset-0"
                     style={{ backfaceVisibility: 'hidden' }}
                 >
-                    <div className="aspect-square w-full overflow-hidden bg-brand-brown mb-2">
-                        <img
-                            src={frontImage}
-                            alt={caption}
-                            className="w-full h-full object-contain bg-white"
-                        />
+                    <div className="aspect-square w-full overflow-hidden bg-brand-brown mb-2 relative flex items-center justify-center bg-white">
+                        {frontComponent ? (
+                            <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
+                                {frontComponent}
+                                {!isFlipped && <div className="absolute inset-0 bg-transparent z-10" />}
+                            </div>
+                        ) : (
+                            <img
+                                src={frontImage}
+                                alt={caption}
+                                className="w-full h-full object-cover"
+                            />
+                        )}
                     </div>
                     {caption && (
                         <div className="font-serif text-center mt-4 text-xl text-white opacity-90">
@@ -45,12 +54,8 @@ const Polaroid = ({ frontImage, backImage, caption }) => {
                         backfaceVisibility: 'hidden'
                     }}
                 >
-                    <div className="aspect-square w-full overflow-hidden bg-brand-brown mb-2">
-                        <img
-                            src={backImage || frontImage}
-                            alt={caption}
-                            className="w-full h-full object-contain bg-white"
-                        />
+                    <div className="aspect-square w-full overflow-hidden bg-brand-brown mb-2 bg-white relative">
+                        <ScratchReveal image={backImage || frontImage} />
                     </div>
                     {caption && (
                         <div className="font-serif text-center mt-4 text-xl text-white opacity-90">

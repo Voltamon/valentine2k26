@@ -14,6 +14,7 @@ export default {
             fontFamily: {
                 'sans': ['Nunito', 'sans-serif'],
                 'serif': ['Playfair Display', 'serif'],
+                'sour-gummy': ['"Sour Gummy"', 'sans-serif'],
             },
         },
     },
