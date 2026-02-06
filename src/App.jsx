@@ -10,9 +10,12 @@ import PromisePage from './pages/PromisePage';
 import ProposePage from './pages/ProposePage';
 import ValentinePage from './pages/ValentinePage';
 
+import MusicPlayer from './components/MusicPlayer';
+
 function App() {
     return (
         <Router>
+            <MusicPlayer />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/hug" element={<HugPage />} />

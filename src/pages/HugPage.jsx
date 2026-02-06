@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import hug2 from '../assets/hug2.jpg';
 
 const HugPage = () => {
@@ -23,10 +23,11 @@ const HugPage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="Warm hugs..." text="Sometimes a hug is all we need to feel safe." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/promise" nextPath="/kiss" />
-                </div>
+                <TypewriterText heading="Warm hugs..." text="What kind of hug do you need?" />
+                <OptionSelection
+                    options={["Bear Hug", "Tight Squeeze", "Gentle Hug", "Warm Cuddle"]}
+                    nextPath="/kiss"
+                />
             </div>
         </Layout>
     );

@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import chocolate2 from '../assets/chocolate2.jpg';
 
 const ChocolatePage = () => {
@@ -23,10 +23,11 @@ const ChocolatePage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="Sweet like you..." text="Life is sweeter with you in it." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/propose" nextPath="/teddy" />
-                </div>
+                <TypewriterText heading="Sweet like you..." text="What's your favorite flavor?" />
+                <OptionSelection
+                    options={["Dark", "Milk", "White", "Caramel"]}
+                    nextPath="/teddy"
+                />
             </div>
         </Layout>
     );

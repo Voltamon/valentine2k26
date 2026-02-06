@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import promise2 from '../assets/promise2.jpg';
 
 const PromisePage = () => {
@@ -23,10 +23,11 @@ const PromisePage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="My promise..." text="To always be there, to always care." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/teddy" nextPath="/hug" />
-                </div>
+                <TypewriterText heading="My promise..." text="What promise implies the most?" />
+                <OptionSelection
+                    options={["Having my back", "Being honest", "Never letting go", "Being my best friend"]}
+                    nextPath="/hug"
+                />
             </div>
         </Layout>
     );

@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import teddy2 from '../assets/teddy2.jpg';
 
 const TeddyPage = () => {
@@ -23,10 +23,11 @@ const TeddyPage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="Cuddles..." text="Ready to be your teddy bear forever." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/chocolate" nextPath="/promise" />
-                </div>
+                <TypewriterText heading="Cuddles..." text="How big of a hug do you want?" />
+                <OptionSelection
+                    options={["Giant", "Medium", "Tiny", "Me"]}
+                    nextPath="/promise"
+                />
             </div>
         </Layout>
     );

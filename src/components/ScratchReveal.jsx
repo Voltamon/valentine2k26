@@ -12,23 +12,26 @@ const ScratchReveal = ({ image, className = "" }) => {
 
         const ctx = canvas.getContext('2d');
 
-        // Function to resize canvas to match container
-        const resizeCanvas = () => {
-            const { width, height } = container.getBoundingClientRect();
-            canvas.width = width + 100;
-            canvas.height = height + 100;
 
-            // Fill with white (cover)
-            ctx.fillStyle = '#FFFFFF';
-            ctx.fillRect(0, 0, width, height);
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                const { width, height } = entry.contentRect;
 
-            // Add some text or instruction if desired? For now just white.
-        };
+                // Only resize if dimensions actually changed to avoid clearing unnecessarily
+                if (canvas.width !== width || canvas.height !== height) {
+                    canvas.width = width;
+                    canvas.height = height;
 
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+                    // Helper: Fill with white
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.fillRect(0, 0, width, height);
+                }
+            }
+        });
 
-        return () => window.removeEventListener('resize', resizeCanvas);
+        resizeObserver.observe(container);
+
+        return () => resizeObserver.disconnect();
     }, []);
 
     const lastPos = useRef(null);

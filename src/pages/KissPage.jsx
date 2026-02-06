@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import kiss2 from '../assets/kiss2.jpg';
 
 const KissPage = () => {
@@ -23,10 +23,11 @@ const KissPage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="Sweet kisses..." text="A kiss to say I love you, now and always." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/hug" nextPath="/valentine" />
-                </div>
+                <TypewriterText heading="Sweet kisses..." text="Where would you like a kiss?" />
+                <OptionSelection
+                    options={["Forehead", "Cheek", "Lips", "Hand"]}
+                    nextPath="/rose"
+                />
             </div>
         </Layout>
     );

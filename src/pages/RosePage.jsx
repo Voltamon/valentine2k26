@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Polaroid from '../components/Polaroid';
 import TenorGif from '../components/TenorGif';
 import TypewriterText from '../components/TypewriterText';
-import NavButtons from '../components/NavButtons';
+import OptionSelection from '../components/OptionSelection';
 import rose2 from '../assets/rose2.jpg';
 
 const RosePage = () => {
@@ -23,10 +23,11 @@ const RosePage = () => {
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="For you..." text="A rose as beautiful as you are." />
-                <div className="order-4 md:order-none md:col-start-2 md:self-start w-full flex justify-center md:justify-start">
-                    <NavButtons prevPath="/" nextPath="/propose" />
-                </div>
+                <TypewriterText heading="For you..." text="Which color rose would you choose?" />
+                <OptionSelection
+                    options={["Red", "Pink", "White", "Yellow"]}
+                    nextPath="/propose"
+                />
             </div>
         </Layout>
     );
