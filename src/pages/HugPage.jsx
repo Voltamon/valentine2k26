@@ -19,7 +19,7 @@ const HugPage = () => {
                         />
                     }
                     backImage={hug2}
-                    caption="Warm hugs..."
+                    caption="Happy Hug Day"
                 />
             </div>
             <div className="contents">

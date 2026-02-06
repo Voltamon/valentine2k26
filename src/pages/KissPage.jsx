@@ -19,14 +19,14 @@ const KissPage = () => {
                         />
                     }
                     backImage={kiss2}
-                    caption="Sweet kisses..."
+                    caption="Happy Kiss Day"
                 />
             </div>
             <div className="contents">
                 <TypewriterText heading="Sweet kisses..." text="Where would you like a kiss?" />
                 <OptionSelection
                     options={["Forehead", "Cheek", "Lips", "Hand"]}
-                    nextPath="/rose"
+                    nextPath="/valentine"
                 />
             </div>
         </Layout>

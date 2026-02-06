@@ -19,7 +19,7 @@ const ChocolatePage = () => {
                         />
                     }
                     backImage={chocolate2}
-                    caption="Sweet like you..."
+                    caption="Happy Chocolate Day"
                 />
             </div>
             <div className="contents">

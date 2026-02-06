@@ -19,7 +19,7 @@ const PromisePage = () => {
                         />
                     }
                     backImage={promise2}
-                    caption="My promise..."
+                    caption="Happy Promise Day"
                 />
             </div>
             <div className="contents">

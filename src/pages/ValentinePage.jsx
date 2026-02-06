@@ -19,7 +19,7 @@ const ValentinePage = () => {
                         />
                     }
                     backImage={valentine2}
-                    caption="Happy Valentine's!"
+                    caption="Happy Valentine's Day"
                 />
             </div>
             <div className="contents">

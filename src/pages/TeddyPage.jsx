@@ -19,11 +19,11 @@ const TeddyPage = () => {
                         />
                     }
                     backImage={teddy2}
-                    caption="Cuddles..."
+                    caption="Happy Teddy Day"
                 />
             </div>
             <div className="contents">
-                <TypewriterText heading="Cuddles..." text="How big of a hug do you want?" />
+                <TypewriterText heading="Cuddles..." text="How big of a Teddy do you want?" />
                 <OptionSelection
                     options={["Giant", "Medium", "Tiny", "Me"]}
                     nextPath="/promise"

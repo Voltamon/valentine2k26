@@ -47,13 +47,14 @@ const ProposePage = () => {
                 <Polaroid
                     frontComponent={
                         <TenorGif
-                            postId="16167379"
-                            aspectRatio="1.23552"
+                            key={noClickCount > 0 ? "sad-bubu" : "question-bear"}
+                            postId={noClickCount > 0 ? "14526934938512287526" : "16167379"}
+                            aspectRatio={noClickCount > 0 ? "1" : "1.23552"}
                             className="w-full h-full"
                         />
                     }
                     backImage={propose2}
-                    caption="The big question..."
+                    caption="Happy Propose Day"
                 />
             </div>
             <div className="contents">

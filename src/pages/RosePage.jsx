@@ -19,7 +19,7 @@ const RosePage = () => {
                         />
                     }
                     backImage={rose2}
-                    caption="For you..."
+                    caption="Happy Rose Day"
                 />
             </div>
             <div className="contents">
