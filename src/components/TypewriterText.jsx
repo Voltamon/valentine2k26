@@ -57,7 +57,7 @@ const TypewriterText = ({ heading, text }) => {
     const [showText, setShowText] = useState(false);
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-1.5 md:gap-4">
             <TypewriterHeading heading={heading} onComplete={() => setShowText(true)} />
             <FadeText show={showText}>
                 {text}

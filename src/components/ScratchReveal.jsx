@@ -15,8 +15,8 @@ const ScratchReveal = ({ image, className = "" }) => {
         // Function to resize canvas to match container
         const resizeCanvas = () => {
             const { width, height } = container.getBoundingClientRect();
-            canvas.width = width + 10;
-            canvas.height = height + 10;
+            canvas.width = width + 100;
+            canvas.height = height + 100;
 
             // Fill with white (cover)
             ctx.fillStyle = '#FFFFFF';
